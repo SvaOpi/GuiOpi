@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>Pagos Online</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                    <img src="web-app/image/Opi.jpg" width="202" height="98" alt="Opi"/>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="40" closable="false" collapsible="false" resizable="false">
+                    Universidad Nacional de Colombia - Sede Bogota
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="175" header="Menu" collapsible="true">
+                   <p:menu>
+                        <p:submenu label="Cuenta">
+                            <p:menuitem value="Mis Datos" url="usuario.xhtml" />
+                            <p:menuitem value="Cambiar Contraseña" url="password.xhtml" />
+                            <p:menuitem value="Cerrar Sesion" url="logout.xhtml" />
+                        </p:submenu>
+                        <p:submenu label="Pagos EPS">
+                            <p:menuitem value="PIN" url="pin.xhtml" />
+                            <p:menuitem value="Pagos Online" url="pagosOnline.xhtml" />
+                        </p:submenu>
+                    </p:menu>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">                    
+                    <h:form>  
+                        <p:panel header="Masks">  
+                            <h:panelGrid columns="2" cellpadding="5">  
+                                <h:outputText value="Mes" />  
+                                <p:selectOneMenu value="" style="width:207px" >  
+                                    <f:selectItem itemLabel=" - - - " itemValue="" />  
+                                    <f:selectItem itemLabel="Mayo" itemValue="1" />  
+                                    <f:selectItem itemLabel="Abril" itemValue="2" />  
+                                    <f:selectItem itemLabel="Marzo" itemValue="3" />   
+                                    <f:selectItem itemLabel="Febrero" itemValue="4" />                                     
+                                    <f:selectItem itemLabel="Enero" itemValue="5" /> 
+                                </p:selectOneMenu> 
+                                
+                                <h:outputText value="Nº Cuenta: *" />  
+                                <p:inputMask value="cuenta" mask="99999999"/> 
+                                
+                                <h:outputText value="Password: " />  
+                                <p:password id="nonFeedback" value="" /> 
+                                
+                                <h:outputText value="Fecha: " />  
+                                <p:inputMask value="" mask="99/99/9999"/> 
+                                
+                                <h:outputText value="Valor Total " />  
+                                <p:inputMask value="" mask="$999.999.999,99"/> 
+                                
+                                <p:commandButton value="Generar Pago" update="display" oncomplete="dialog.show()"/>                                  
+
+                            </h:panelGrid>  
+                        </p:panel>  
+
+                        <p:dialog widgetVar="dialog" modal="true">  
+                            <h:panelGrid id="display" columns="2" cellpadding="5">  
+                                <h:outputText value="Mes: "/> 
+                                <h:outputText value="" /> 
+                                
+                                <h:outputText value="Cuenta: " />  
+                                <h:outputText value="" />  
+                                
+                                <h:outputText value="Fecha: " />  
+                                <h:outputText value="" />  
+                                
+                                <h:outputText value="Valor Total: " />  
+                                <h:outputText value="" />  
+                                
+                            </h:panelGrid>  
+                        </p:dialog>  
+
+                    </h:form>  
+                </p:layoutUnit>
+
+            </p:layout>
+
+        </h:body>
+
+    </f:view>
+</html>
+
