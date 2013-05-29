@@ -27,6 +27,9 @@
 
                 <p:layoutUnit position="west" size="175" header="Menu" collapsible="true">
                    <p:menu>
+                        <p:submenu label="OPI">
+                            <p:menuitem value="Inicio" url="inicio.xhtml" />
+                        </p:submenu>
                         <p:submenu label="Cuenta">
                             <p:menuitem value="Mis Datos" url="usuario.xhtml" />
                             <p:menuitem value="Cambiar Contraseña" url="password.xhtml" />
@@ -41,7 +44,7 @@
 
                 <p:layoutUnit position="center">                    
                     <h:form>  
-                        <p:panel header="Masks">  
+                        <p:panel header="Pagos en Linea">  
                             <h:panelGrid columns="2" cellpadding="5">  
                                 <h:outputText value="Mes" />  
                                 <p:selectOneMenu value="" style="width:207px" >  

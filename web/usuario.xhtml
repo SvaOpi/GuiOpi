@@ -9,31 +9,25 @@
         <h:head>
             <f:facet name="first">
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
-                <title>Inicio</title>
+                <title>Pin</title>
             </f:facet>
         </h:head>
 
         <h:body>
 
             <p:layout fullPage="true">
-
-                <p:layoutUnit position="north" size="120" resizable="true" closable="true" collapsible="true">
-                    <p:graphicImage value="/web-app/image/Opi.jpg"/> 
+                <p:layoutUnit position="north" size="100" resizable="false" closable="true" collapsible="true">
+                    <img src="web-app/image/Opi.jpg" width="202" height="98" alt="Opi"/>
                 </p:layoutUnit>
-
                 <p:layoutUnit position="south" size="40" closable="false" collapsible="false" resizable="false">
                     Universidad Nacional de Colombia - Sede Bogota
                 </p:layoutUnit>
-
                 <p:layoutUnit position="west" size="175" header="Menu" collapsible="true">
-                   <p:menu>
+                    <p:menu>
                         <p:submenu label="OPI">
                             <p:menuitem value="Inicio" url="inicio.xhtml" />
                         </p:submenu>
                         <p:submenu label="Cuenta">
-                            <p:menuitem value="Iniciar Sesion" url="login.xhtml" />
-                        </p:submenu>
-                       <p:submenu label="Cuenta">
                             <p:menuitem value="Mis Datos" url="usuario.xhtml" />
                             <p:menuitem value="Cambiar Contraseña" url="password.xhtml" />
                             <p:menuitem value="Cerrar Sesion" url="logout.xhtml" />
@@ -44,20 +38,24 @@
                         </p:submenu>
                     </p:menu>
                 </p:layoutUnit>
-
-                <p:layoutUnit position="center">                    
-                    <p:carousel itemStyleClass="carItem" pageLinks="4"  autoPlayInterval="4000" effect="easeInStrong" circular="true">  
-                    <p:graphicImage value="/web-app/image/Opi.jpg"/>  
-                    <p:graphicImage value="/web-app/image/Opi.jpg"/>  
-                    <p:graphicImage value="/web-app/image/Opi.jpg"/>  
-                    <p:graphicImage value="/web-app/image/Opi.jpg"/>  
-                </p:carousel>  
+                <p:layoutUnit position="center">                        
+                    <p:fieldset legend="Datos Personales" toggleable="true" toggleSpeed="500">  
+                         <h:panelGrid columns="1" cellpadding="10">  
+                             <h:outputText  value="Documento:" />  
+                             <h:outputText  value="Nombre:" /> 
+                             <h:outputText  value="Apellido:" />  
+                             <h:outputText  value="Fecha Nacimiento:" />   
+                         </h:panelGrid>  
+                     </p:fieldset>  
+                     <p:fieldset legend="Datos Afiliasion" toggleable="true" toggleSpeed="500">  
+                         <h:panelGrid columns="1" cellpadding="10">  
+                             <h:outputText  value="EPS:" />  
+                             <h:outputText  value="Estado:" /> 
+                         </h:panelGrid>  
+                     </p:fieldset>  
                 </p:layoutUnit>
-
             </p:layout>
-
         </h:body>
-
     </f:view>
 </html>
 
