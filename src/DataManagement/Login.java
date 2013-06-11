@@ -60,6 +60,7 @@ public class Login {
 
     public String getMensaje2() {
         return mensaje2;
+        
     }
 
     public void setMensaje2(String mensaje2) {
