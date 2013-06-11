@@ -40,16 +40,17 @@
                 </p:layoutUnit>
                 <p:layoutUnit position="center">                    
                     <h:form>  
-                        <p:panel header="Match Mode">  
+                        <p:panel id="panel" header="Match Mode">  
                             <p:messages id="messages" showDetail="true" autoUpdate="true"/>  
                             <h:panelGrid columns="2" id="matchGrid">                                  
                                 <h:outputText value="Nº Documento: *" />  
-                                <p:inputMask value="documento" mask="9.999.999.999"/> 
+                                <p:inputText value="#{login.documento}"/> 
                                 
                                 <h:outputLabel for="pwd0" value="Contraseña: *" />  
-                                <p:password id="pwd0" value="" label="Password 1" required="true"/>                                  
+                                <p:password id="pwd0" value="#{login.contraseña}" label="Password 1" required="true" />                                  
                             </h:panelGrid>  
-                            <p:commandButton id="login" update="matchGrid" value="Ingresar" />  
+                            <p:commandButton id="login" update="panel" value="Ingresar"  action="#{login.validar()}"/>  
+                            <h:outputText value="#{login.mensaje2}" />
                         </p:panel>  
                     </h:form>  
                 </p:layoutUnit>
