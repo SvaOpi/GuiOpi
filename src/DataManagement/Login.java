@@ -4,6 +4,7 @@
  */
 package DataManagement;
 
+import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -13,11 +14,12 @@ import javax.faces.bean.SessionScoped;
  */
 @ManagedBean
 @SessionScoped
-public class Login {
+public class Login{
     String contraseña;
     String documento;
     String mensaje="login";
     String mensaje2="";
+    
 
     public String getMensaje() {
         return mensaje;
@@ -29,21 +31,19 @@ public class Login {
     DataManager m=new DataManager();
     
     public String getContraseña() {
-        return contraseña;
+        return DataManager.getContraseña();
     }
 
     public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
-        m.setCadena(contraseña);
+        this.contraseña = contraseña;        
     }
 
     public String getDocumento() {
-        return documento;
+        return DataManager.getDocumento();
     }
 
     public void setDocumento(String documento) {
-        this.documento = documento;        
-        m.setCadena(documento);
+        this.documento = documento;
     }
     public String validar(){
         if(documento!= null && (Long.parseLong(documento)<0||Long.parseLong(documento)>999999999)){
@@ -51,10 +51,18 @@ public class Login {
             mensaje2="documento no valido.";
         }
         else{
-            mensaje="usuario";
-            mensaje2="";
+            if(contraseña.length()<15 && contraseña.length()>5){
+                mensaje="usuario";
+                mensaje2="";
+                DataManager.setDocumento(documento);
+                DataManager.setContraseña(contraseña);
+            }else{
+                mensaje="login";
+                mensaje2="contraseña no valida.";
+            }
+           
         }
-        m.setCadena(mensaje);
+        
         return mensaje;
     }
 

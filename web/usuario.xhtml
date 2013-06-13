@@ -40,17 +40,23 @@
                 </p:layoutUnit>
                 <p:layoutUnit position="center">                        
                     <p:fieldset legend="Datos Personales" toggleable="true" toggleSpeed="500">  
-                         <h:panelGrid columns="1" cellpadding="10">  
-                             <h:outputText  value="Documento:  #{login.documento}" />  
+                         <h:panelGrid columns="2" cellpadding="10">  
+                             <h:outputText  value="Documento:" />
+                             <h:outputText  value="#{usuario.documento}" />
                              <h:outputText  value="Nombre:" /> 
+                             <h:outputText  value="#{usuario.nombre}" /> 
                              <h:outputText  value="Apellido:" />  
+                             <h:outputText  value="#{usuario.apellido}" />  
                              <h:outputText  value="Fecha Nacimiento:" />   
+                             <h:outputText  value="#{usuario.fechaNac}" />   
                          </h:panelGrid>  
                      </p:fieldset>  
-                     <p:fieldset legend="Datos Afiliasion" toggleable="true" toggleSpeed="500">  
-                         <h:panelGrid columns="1" cellpadding="10">  
+                     <p:fieldset legend="Datos Afiliacion" toggleable="true" toggleSpeed="500">  
+                         <h:panelGrid columns="2" cellpadding="10">  
                              <h:outputText  value="EPS:" />  
+                             <h:outputText  value="#{usuario.eps}" />  
                              <h:outputText  value="Estado:" /> 
+                             <h:outputText  value="#{usuario.estado}" /> 
                          </h:panelGrid>  
                      </p:fieldset>  
                 </p:layoutUnit>
