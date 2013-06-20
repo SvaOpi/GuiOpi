@@ -6,7 +6,7 @@ package DataManagement;
 
 import com.dataejbsra.ws.ROb;
 import com.dataejbsra.ws.Person;
-import com.dataejbopi.ws.Person;//cambiar nombre variable
+//import com.dataejbopi.ws.Person;//cambiar nombre variable
 import com.dataejbopi.ws.Pin;
 import java.util.List;
 /**
@@ -24,9 +24,18 @@ public class DataManager {
     static com.dataejbsra.ws.Person persona;
     static com.dataejbopi.ws.Person personaopi;
     static List<Pin> pins;
+    static com.dataejbopi.ws.Pin nuevopin;
     DataManager(){
        persona=new com.dataejbsra.ws.Person();
        personaopi= new com.dataejbopi.ws.Person();
+    }
+
+    public static Pin getNuevopin() {
+        return nuevopin;
+    }
+
+    public static void setNuevopin(Pin nuevopin) {
+        DataManager.nuevopin = nuevopin;
     }
 
     public static List<Pin> getPins() {
@@ -97,16 +106,34 @@ public class DataManager {
         }        
     }
 
-    private static java.util.List<com.dataejbopi.ws.Person> findAllPins() {
+    public static java.util.List<com.dataejbopi.ws.Person> findAllPins() {
         com.dataejbopi.ws.PinWs_Service service = new com.dataejbopi.ws.PinWs_Service();
         com.dataejbopi.ws.PinWs port = service.getPinWsPort();
         return port.findAll();
     }
 
-    private static com.dataejbopi.ws.ROb createPaymentForPin(java.lang.Long idPin, java.lang.Double salary) {
+    public static com.dataejbopi.ws.ROb createPaymentForPin(java.lang.Long idPin, java.lang.Double salary) {
         com.dataejbopi.ws.PaymentWs_Service service = new com.dataejbopi.ws.PaymentWs_Service();
         com.dataejbopi.ws.PaymentWs port = service.getPaymentWsPort();
         return port.createPaymentForPin(idPin, salary);
+    }
+
+    public static boolean registerPin(java.lang.Long personCedule) {
+        com.dataejbopi.ws.PinWs_Service service = new com.dataejbopi.ws.PinWs_Service();
+        com.dataejbopi.ws.PinWs port = service.getPinWsPort();
+        System.out.println("aaaaaaaaaaaaaaaa");
+        if(port.registerPin(personCedule).getData()!=null){
+            nuevopin=(com.dataejbopi.ws.Pin)port.registerPin(personCedule).getData();
+            return true;
+        }
+       
+        return false;
+    }
+
+    private static com.dataejbopi.ws.ROb onlinePayment(java.lang.Long cedule, java.lang.Long personAccount, java.lang.String passwordAccount) {
+        com.dataejbopi.ws.PaymentWs_Service service = new com.dataejbopi.ws.PaymentWs_Service();
+        com.dataejbopi.ws.PaymentWs port = service.getPaymentWsPort();
+        return port.onlinePayment(cedule, personAccount, passwordAccount);
     }
 
     

@@ -16,8 +16,8 @@ import javax.faces.bean.SessionScoped;
 public class PagosOnline {
     String numeroCuenta;
     String contraseña;
-    String fecha;
     String ValorTotal;
+    String mensaje;
 
     public String getNumeroCuenta() {
         return numeroCuenta;

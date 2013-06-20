@@ -84,32 +84,21 @@
                     <h:form>  
                         <p:panel header="Generar PIN" toggleable="true" toggleSpeed="500" closeSpeed="500" >  
                             <h:panelGrid columns="2" cellpadding="5">  
-                                <h:outputText value="Mes" />  
-                                <p:selectOneMenu value="" style="width:207px" >  
-                                    <f:selectItem itemLabel=" - - - " itemValue="" />  
-                                    <f:selectItem itemLabel="Enero" itemValue="1" />  
-                                    <f:selectItem itemLabel="Febrero" itemValue="2" />  
-                                    <f:selectItem itemLabel="Marzo" itemValue="3" />   
-                                    <f:selectItem itemLabel="Abril" itemValue="4" />                                     
-                                    <f:selectItem itemLabel="Mayo" itemValue="5" /> 
-                                    <f:selectItem itemLabel="Junio" itemValue="6" />
-                                    <f:selectItem itemLabel="julio" itemValue="7" />
-                                    <f:selectItem itemLabel="Agosto" itemValue="8" /> 
-                                    <f:selectItem itemLabel="Septiembre" itemValue="9" /> 
-                                    <f:selectItem itemLabel="Octubre" itemValue="10" /> 
-                                    <f:selectItem itemLabel="Noviembre" itemValue="11" />
-                                    <f:selectItem itemLabel="Diciembre" itemValue="12" /> 
-                                </p:selectOneMenu> 
- 
-                                <p:commandButton value="Submit" update="display" oncomplete="dialog.show()"/>  
+                                <h:outputText value="Generar PIN del mes actual" />  
+                                <p:commandButton value="Submit" update="display" oncomplete="dialog.show()" action="#{pin.submit()}"/>  
 
                             </h:panelGrid>  
                         </p:panel>  
 
-                        <p:dialog widgetVar="dialog" modal="true">  
-                            <h:panelGrid id="display" columns="2" cellpadding="5">  
-                                <h:outputText value="Mes:"/> 
-                                <h:outputText value="" /> 
+                        <p:dialog widgetVar="dialog">  
+                            <h:panelGrid id="display" columns="1" cellpadding="5">
+                                <h:outputText value="#{pin.mensaje}"/>
+                                <h:outputText value="id: #{pin.pinid}"/> 
+                                <h:outputText value="creation date: #{pin.pincreationdate}" /> 
+                                <h:outputText value="limit date: #{pin.pinlimitdate}" />
+                                <h:outputText value="state: #{pin.pinstate}" /> 
+                                <h:outputText value="opi service value: #{pin.pinopiservicevalue}" /> 
+                                <h:outputText value="health service value: #{pin.pinhealthservicevalue}" /> 
                             </h:panelGrid>  
                         </p:dialog>  
 
