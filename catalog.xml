@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://25.16.26.205:8080/PaymentWs/PaymentWs?wsdl" uri="src/conf/xml-resources/web-services/NewWebServiceFromWSDL1/wsdl/25.16.26.205_8080/PaymentWs/PaymentWs.wsdl"/>
+    <system systemId="http://25.16.26.205:8080/PaymentWs/PaymentWs?xsd=1" uri="src/conf/xml-resources/web-services/NewWebServiceFromWSDL1/wsdl/25.16.26.205_8080/PaymentWs/PaymentWs.xsd_1.xsd"/>
+    <system systemId="http://25.16.26.205:8080/EpsWs/EpsWs?wsdl" uri="src/conf/xml-resources/web-services/EpsWs/wsdl/25.16.26.205_8080/EpsWs/EpsWs.wsdl"/>
+    <system systemId="http://25.16.26.205:8080/PinWs/PinWs?wsdl" uri="src/conf/xml-resources/web-services/PinWs/wsdl/25.16.26.205_8080/PinWs/PinWs.wsdl"/>
+    <system systemId="http://25.16.26.205:8080/PinWs/PinWs?xsd=1" uri="src/conf/xml-resources/web-services/PinWs/wsdl/25.16.26.205_8080/PinWs/PinWs.xsd_1.xsd"/>
+    <system systemId="file:/J:/U/8sem/arquitectura%20de%20software/svaopi/GuiOpi/src/conf/xml-resources/web-services/EpsWs/wsdl/25.16.26.205_8080/EpsWs/EpsWs.wsdl" uri="src/conf/xml-resources/web-services/NewWebServiceFromWSDL/wsdl/EpsWs.wsdl"/>
+    <system systemId="http://25.16.26.205:8080/EpsWs/EpsWs?xsd=1" uri="src/conf/xml-resources/web-services/NewWebServiceFromWSDL/wsdl/25.16.26.205_8080/EpsWs/EpsWs.xsd_1.xsd"/>
+    <system systemId="http://25.16.26.205:8080/PersonOpiWs/PersonOpiWs?wsdl" uri="src/conf/xml-resources/web-services/PersonOpiWs/wsdl/25.16.26.205_8080/PersonOpiWs/PersonOpiWs.wsdl"/>
+    <system systemId="http://25.16.26.205:8080/PersonOpiWs/PersonOpiWs?xsd=1" uri="src/conf/xml-resources/web-services/PersonOpiWs/wsdl/25.16.26.205_8080/PersonOpiWs/PersonOpiWs.xsd_1.xsd"/>
+    <system systemId="file:/C:/Users/casa/Desktop/PersonOpiWs.wsdl" uri="src/conf/xml-resources/web-services/PersonOpiWs/wsdl/PersonOpiWs.wsdl"/>
+</catalog>

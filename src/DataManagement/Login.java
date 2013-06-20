@@ -51,14 +51,15 @@ public class Login{
             mensaje2="documento no valido.";
         }
         else{
-            if(contraseña.length()<15 && contraseña.length()>5){
+            if(contraseña.length()>15 || contraseña.length()<5){
+                mensaje="login";
+                mensaje2="contraseña no valida.";
+            }else{
+                
                 mensaje="usuario";
                 mensaje2="";
                 DataManager.setDocumento(documento);
                 DataManager.setContraseña(contraseña);
-            }else{
-                mensaje="login";
-                mensaje2="contraseña no valida.";
             }
            
         }
@@ -74,5 +75,7 @@ public class Login{
     public void setMensaje2(String mensaje2) {
         this.mensaje2 = mensaje2;
     }
+    
+    
     
 }
