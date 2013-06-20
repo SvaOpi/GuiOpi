@@ -47,9 +47,8 @@ public class Password {
         if (!pass22.equals(pass2)){
             mensaje2="las contraseñas no son iguales.";            
         }else{
-            if(pass1.equals(DataManager.getContraseña())){
+            if(DataManager.validateLogin(DataManager.getDocumento(),pass1).getData()!=null){
                if(pass2.length()<15 && pass2.length()>5){
-                   DataManager.setContraseña(pass2);
                    mensaje1="usuario";
                 }else{
                    mensaje2="la nueva contraseña no es valida.";

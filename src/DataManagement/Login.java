@@ -4,9 +4,11 @@
  */
 package DataManagement;
 
+
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.xml.ws.WebServiceRef;
 
 /**
  *
@@ -15,6 +17,7 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean
 @SessionScoped
 public class Login{
+    
     String contraseña;
     String documento;
     String mensaje="login";
@@ -31,7 +34,7 @@ public class Login{
     DataManager m=new DataManager();
     
     public String getContraseña() {
-        return DataManager.getContraseña();
+        return contraseña;
     }
 
     public void setContraseña(String contraseña) {
@@ -39,7 +42,7 @@ public class Login{
     }
 
     public String getDocumento() {
-        return DataManager.getDocumento();
+        return documento;
     }
 
     public void setDocumento(String documento) {
@@ -55,11 +58,15 @@ public class Login{
                 mensaje="login";
                 mensaje2="contraseña no valida.";
             }else{
+                if(DataManager.validateLogin(documento,contraseña).getData()!=null){
+                    mensaje="usuario";
+                    mensaje2="";
+                    DataManager.setDocumento(documento);
+                }else{
+                    mensaje="login";
+                    mensaje2="usuario no encontrado.";
+                }
                 
-                mensaje="usuario";
-                mensaje2="";
-                DataManager.setDocumento(documento);
-                DataManager.setContraseña(contraseña);
             }
            
         }
@@ -75,6 +82,8 @@ public class Login{
     public void setMensaje2(String mensaje2) {
         this.mensaje2 = mensaje2;
     }
+
+    
     
     
     

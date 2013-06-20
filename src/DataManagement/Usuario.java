@@ -17,7 +17,6 @@ import java.io.Serializable;
 public class Usuario{
     String documento;
     String nombre;
-    String apellido;
     String fechaNac;
     String eps;
     String estado;
@@ -25,6 +24,7 @@ public class Usuario{
     
     public Usuario(){
         
+                
     }
     public String getDocumento() {
         return DataManager.getDocumento();
@@ -42,16 +42,8 @@ public class Usuario{
         this.nombre = nombre;
     }
 
-    public String getApellido() {
-        return DataManager.getApellido();
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
     public String getFechaNac() {
-        return DataManager.getFechaNac();
+        return DataManager.getFec_nac();
     }
 
     public void setFechaNac(String fechaNac) {
@@ -67,11 +59,11 @@ public class Usuario{
     }
 
     public String getEstado() {
-        return DataManager.getEstado();
+        return estado;
     }
 
     public void setEstado(String estado) {
-        this.estado = estado;
+        this.estado = DataManager.getEstado();
     }
     
 }

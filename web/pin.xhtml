@@ -42,45 +42,39 @@
                     <p:panel header="PIN's generados" toggleable="true" toggleSpeed="500" closeSpeed="500"  >
                         <h:form id="formListPin">  
                             <h:form prependId="false">  
-                                <p:dataTable id="dataTable" var="car" value=""  
+                                <p:dataTable id="dataTable" var="pin" value="#{pin.pins}"  
                                              paginator="true" rows="10"  
                                              paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
                                              rowsPerPageTemplate="5,10,15">  
                                     <p:column>  
-                                        <f:facet name="header">  
-                                            <h:outputText value="# Pin" />  
+                                        <f:facet name="header"> #Pin  
                                         </f:facet>  
-                                        <h:outputText value="" />  
+                                        #{pin.id}  
                                     </p:column>  
                                     <p:column>  
-                                        <f:facet name="header">  
-                                            <h:outputText value="Fecha Creacion" />  
+                                        <f:facet name="header"> Fecha Creacion  
                                         </f:facet>  
-                                        <h:outputText value="" />  
+                                        #{pin.creationdate}  
                                     </p:column> 
                                     <p:column>  
-                                        <f:facet name="header">  
-                                            <h:outputText value="Estado" />  
+                                        <f:facet name="header"> Estado  
                                         </f:facet>  
-                                        <h:outputText value="" />  
+                                        #{pin.pinstate}  
                                     </p:column> 
                                     <p:column>  
-                                        <f:facet name="header">  
-                                            <h:outputText value="Fecha Limite" />  
+                                        <f:facet name="header"> Fecha Limite 
                                         </f:facet>  
-                                        <h:outputText value="" />  
+                                        #{pin.limitdate}  
                                     </p:column>                                      
                                     <p:column>  
-                                        <f:facet name="header">  
-                                            <h:outputText value="Fecha de Pago" />  
+                                        <f:facet name="header"> Fecha de Pago  
                                         </f:facet>  
-                                        <h:outputText value="" />  
+                                        #{pin.payment.paydate}  
                                     </p:column> 
                                     <p:column>  
-                                        <f:facet name="header">  
-                                            <h:outputText value="Valor Total" />  
+                                        <f:facet name="header"> Valor Total
                                         </f:facet>  
-                                        <h:outputText value="" />  
+                                        #{pin.payment.totalvalue}  
                                     </p:column>  
                                 </p:dataTable>  
                             </h:form>  
@@ -93,11 +87,18 @@
                                 <h:outputText value="Mes" />  
                                 <p:selectOneMenu value="" style="width:207px" >  
                                     <f:selectItem itemLabel=" - - - " itemValue="" />  
-                                    <f:selectItem itemLabel="Mayo" itemValue="1" />  
-                                    <f:selectItem itemLabel="Abril" itemValue="2" />  
+                                    <f:selectItem itemLabel="Enero" itemValue="1" />  
+                                    <f:selectItem itemLabel="Febrero" itemValue="2" />  
                                     <f:selectItem itemLabel="Marzo" itemValue="3" />   
-                                    <f:selectItem itemLabel="Febrero" itemValue="4" />                                     
-                                    <f:selectItem itemLabel="Enero" itemValue="5" /> 
+                                    <f:selectItem itemLabel="Abril" itemValue="4" />                                     
+                                    <f:selectItem itemLabel="Mayo" itemValue="5" /> 
+                                    <f:selectItem itemLabel="Junio" itemValue="6" />
+                                    <f:selectItem itemLabel="julio" itemValue="7" />
+                                    <f:selectItem itemLabel="Agosto" itemValue="8" /> 
+                                    <f:selectItem itemLabel="Septiembre" itemValue="9" /> 
+                                    <f:selectItem itemLabel="Octubre" itemValue="10" /> 
+                                    <f:selectItem itemLabel="Noviembre" itemValue="11" />
+                                    <f:selectItem itemLabel="Diciembre" itemValue="12" /> 
                                 </p:selectOneMenu> 
  
                                 <p:commandButton value="Submit" update="display" oncomplete="dialog.show()"/>  

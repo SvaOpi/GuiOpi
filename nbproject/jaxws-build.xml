@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:webproject2="http://www.netbeans.org/ns/web-project/2" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSGEN SECTION
+                ===================
+            -->
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <fail if="${wsimport.bad.version}" message="WsImport ant task defined in the classpath ${j2ee.platform.wsimport.classpath} has a serious bug. See http://wiki.netbeans.org/MetroIssue for details."/>
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <property name="j2ee.platform.wsimport.classpath" value="${libs.jaxws21.classpath}"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${java.home}/../lib/tools.jar:${j2ee.platform.wsimport.classpath}:${javac.classpath}"/>
+        </taskdef>
+        <condition property="conf-dir" value="${conf.dir}/" else="">
+            <isset property="conf.dir"/>
+        </condition>
+    </target>
+    <target name="wsimport-client-PinWs" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/PinWs"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/PinWs" destdir="${build.generated.dir}/jax-wsCache/PinWs" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/PinWs/wsdl/25.16.26.205_8080/PinWs/PinWs.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" wsdlLocation="http://25.16.26.205:8080/PinWs/PinWs?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/PinWs/wsdl/25.16.26.205_8080/PinWs/PinWs.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/PinWs"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/PinWs">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-PinWs" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/dataejbopi/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/PinWs"/>
+    </target>
+    <target name="wsimport-client-PaymentWs" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/PaymentWs"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/PaymentWs" destdir="${build.generated.dir}/jax-wsCache/PaymentWs" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/PaymentWs/wsdl/25.16.26.205_8080/PaymentWs/PaymentWs.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" wsdlLocation="http://25.16.26.205:8080/PaymentWs/PaymentWs?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/PaymentWs/wsdl/25.16.26.205_8080/PaymentWs/PaymentWs.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/PaymentWs"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/PaymentWs">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-PaymentWs" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/dataejbopi/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/PaymentWs"/>
+    </target>
+    <target name="wsimport-client-PersonOpiWs" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/PersonOpiWs"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/PersonOpiWs" destdir="${build.generated.dir}/jax-wsCache/PersonOpiWs" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/PersonOpiWs/wsdl/25.16.26.205_8080/PersonOpiWs/PersonOpiWs.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" wsdlLocation="http://25.16.26.205:8080/PersonOpiWs/PersonOpiWs?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/PersonOpiWs/wsdl/25.16.26.205_8080/PersonOpiWs/PersonOpiWs.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/PersonOpiWs"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/PersonOpiWs">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-PersonOpiWs" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/dataejbopi/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/PersonOpiWs"/>
+    </target>
+    <target name="wsimport-client-EpsWs" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/EpsWs"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/EpsWs" destdir="${build.generated.dir}/jax-wsCache/EpsWs" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/EpsWs/wsdl/25.16.26.205_8080/EpsWs/EpsWs.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" wsdlLocation="http://25.16.26.205:8080/EpsWs/EpsWs?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/EpsWs/wsdl/25.16.26.205_8080/EpsWs/EpsWs.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/EpsWs"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/EpsWs">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-EpsWs" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/dataejbopi/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/EpsWs"/>
+    </target>
+    <target name="wsimport-client-PersonWS_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/PersonWS_1"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/PersonWS_1" destdir="${build.generated.dir}/jax-wsCache/PersonWS_1" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/PersonWS_1/wsdl/25.16.26.205_8080/PersonWS/PersonWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" wsdlLocation="http://25.16.26.205:8080/PersonWS/PersonWS?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/PersonWS_1/wsdl/25.16.26.205_8080/PersonWS/PersonWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/PersonWS_1"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/PersonWS_1">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-PersonWS_1" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/dataejbsra/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/PersonWS_1"/>
+    </target>
+    <target name="wsimport-client-CompanyWS_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/CompanyWS_1"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/CompanyWS_1" destdir="${build.generated.dir}/jax-wsCache/CompanyWS_1" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/CompanyWS_1/wsdl/25.16.26.205_8080/CompanyWS/CompanyWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" wsdlLocation="http://25.16.26.205:8080/CompanyWS/CompanyWS?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/CompanyWS_1/wsdl/25.16.26.205_8080/CompanyWS/CompanyWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/CompanyWS_1"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/CompanyWS_1">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-CompanyWS_1" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/dataejbsra/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/CompanyWS_1"/>
+    </target>
+    <target name="wsimport-client-CompanyPersonWS_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/CompanyPersonWS_1"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/CompanyPersonWS_1" destdir="${build.generated.dir}/jax-wsCache/CompanyPersonWS_1" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/CompanyPersonWS_1/wsdl/25.16.26.205_8080/CompanyPersonWS/CompanyPersonWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" wsdlLocation="http://25.16.26.205:8080/CompanyPersonWS/CompanyPersonWS?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/CompanyPersonWS_1/wsdl/25.16.26.205_8080/CompanyPersonWS/CompanyPersonWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/CompanyPersonWS_1"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/CompanyPersonWS_1">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-CompanyPersonWS_1" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/dataejbsra/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/CompanyPersonWS_1"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-PinWs, wsimport-client-PaymentWs, wsimport-client-PersonOpiWs, wsimport-client-EpsWs, wsimport-client-PersonWS_1, wsimport-client-CompanyWS_1, wsimport-client-CompanyPersonWS_1"/>
+</project>
